@@ -1562,7 +1562,7 @@ Payments Options
 }
 #respond .input-wrap {
   margin: 0px 15px 10px 0;
-  float: left;
+  display: inline-block;
   width: 31%;
 }
 #respond .input-wrap.textarea {
@@ -1611,6 +1611,7 @@ Payments Options
   padding: 0;
 }
 #respond #submit-respond {
+  margin-top: 15px;
   outline: none;
   width: auto;
   padding-left: 12px;

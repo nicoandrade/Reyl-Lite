@@ -25,7 +25,7 @@ function reyl_lite_custom_header_setup() {
 		'default-image'          => '',
 		'default-text-color'     => '383838',
 		'width'                  => 1905,
-		'height'                 => 61,
+		'height'                 => 102,
 		'flex-height'            => true,
 		'flex-width'            => true,
 		'wp-head-callback'       => 'reyl_lite_header_style',
