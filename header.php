@@ -66,8 +66,8 @@
                                 'menu_id' => 'primary-menu',
                                 'depth'             => 3,
                                 'menu_class'        => 'nav',
-                                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                                'walker'            => new wp_bootstrap_navwalker()
+                                'fallback_cb'       => 'reyl_lite_wp_bootstrap_navwalker::fallback',
+                                'walker'            => new reyl_lite_wp_bootstrap_navwalker()
                             ));
                             ?>
                         </nav>
