@@ -16,6 +16,17 @@ if ( ! function_exists( 'reyl_lite_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function reyl_lite_setup() {
+
+	/*
+	 * Defines Constant
+	 */
+	$reyl_lite_theme_data = wp_get_theme();
+	define( 'QL_STORE_URL', 'https://www.quemalabs.com' );
+	define( 'QL_THEME_NAME', $reyl_lite_theme_data['Name'] );
+	define( 'QL_THEME_VERSION', $reyl_lite_theme_data['Version'] );
+	define( 'QL_THEME_SLUG', sanitize_title( $reyl_lite_theme_data['Name'] ) );
+	define( 'QL_THEME_AUTHOR', $reyl_lite_theme_data['Author'] );
+
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -184,4 +195,7 @@ require get_template_directory() . '/inc/jetpack.php';
 
 	// Custom Header
 	require get_template_directory() . '/inc/theme-functions/custom-header.php';
+
+	// Theme Info Page
+	require get_template_directory() . '/inc/theme-functions/theme-info-page.php';
 

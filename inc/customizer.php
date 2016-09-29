@@ -36,6 +36,18 @@ function reyl_lite_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 
+	/*
+	PRO Version
+	------------------------------ */
+	$wp_customize->add_section( 'reyl_lite_pro_section', array(
+		'title' => esc_attr__( 'PRO version', 'reyl-lite' ),
+		'priority' => 1,
+	) );
+	$wp_customize->add_setting( 'reyl_lite_probtn', array( 'default' => '', 'sanitize_callback' => 'reyl_lite_sanitize_text', ) );
+	$wp_customize->add_control( new reyl_lite_Display_Text_Control( $wp_customize, 'reyl_lite_probtn', array(
+		'section' => 'reyl_lite_pro_section', // Required, core or custom.
+		'label' => sprintf( __( 'Check out the PRO version for more features. %s View PRO version %s', 'reyl-lite' ), '<a target="_blank" class="button" href="https://www.quemalabs.com/theme/reyl-pro/" style="width: 80%; margin: 10px auto; display: block; text-align: center;">', '</a>' ),
+	) ) );
 
 
 
@@ -73,11 +85,6 @@ add_action( 'customize_preview_init', 'reyl_lite_customize_preview_js' );
  * Load scripts on the Customizer not the Previewer (iframe)
  */
 function reyl_lite_customize_js() {
-
-	wp_enqueue_script( 'reyl_lite_customizer_top_buttons', get_template_directory_uri() . '/js/theme-customizer-top-buttons.js', array( 'jquery' ), true  );
-	wp_localize_script( 'reyl_lite_customizer_top_buttons', 'topbtns', array(
-			'pro' => esc_html__( 'More Themes', 'reyl-lite' )
-	) );
 	
 	wp_enqueue_script( 'reyl_lite_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-controls' ), '20151024', true );
 
